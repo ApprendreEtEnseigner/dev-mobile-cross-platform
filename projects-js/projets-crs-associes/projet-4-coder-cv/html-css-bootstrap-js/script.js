@@ -17,7 +17,9 @@ window.addEventListener('scroll', function(){
 
 //! TYPED
 var typed = new Typed('.typed', {
-    strings: ["Passioné de technologie de l'entrepreneuriat et de l'enseignement, ce site est, pour moi un outil par lequel je partage avec vous mes passions. Depuis que j'ai appris qu' \"Enseigner c'est apprendre deux fois\", je me suis fixé pour objectif, de passer 50% de mon temps à apprendre et les 50% restants, de partager (enseigner) ce que j'ai appris. C'est un plaisir pour moi de savoir que je peux rendre service à autrui, que je peux apporter une valeur ajoutée à autrui. Merci de m'aider à m'améliorer à travers vos critiques constructives."],
+    strings: [
+      "Je suis intégrateur web capable de réaliser des sites web professionnels. Je maîtrise le HTML, CSS, JavaScript, et Bootstrap. Je suis passionné par le développement web et je me forme en permanence aux nouvelles technologies. Je suis curieux, créatif, rigoureux et autonome. J’ai l’esprit d’équipe, de partage et le sens du service client."
+    ],
     typeSpeed: 40,
     // backSpeed: 0
   });

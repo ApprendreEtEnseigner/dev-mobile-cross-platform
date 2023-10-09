@@ -421,34 +421,100 @@ header .button:hover a{
    }
 
    /* *************************** HOBBIES ****************** */
-
    #hobbies {
     padding: 250px 50px 100px 50px;
     margin: -300px 0 ;
     clip-path: polygon(0 21%, 100% 31, 100% 95%, 0% 100%);
     background: #ffbb00;
    }
-
-   #hobbies h3 {
-    transform: rotate(4.2deg);
-    font-size: 3em;
-    text-shadow: -1px 1px 0px #375e97;
-   }
-
-   .pictures {
-    display: flex;
-    justify-content: center;
-   }
-
-   .flip-box-back {
-    margin: 0 auto;
-    writing-mode: vertical-lr;
-    text-orientation: upright;
-    width: 100%;
-   }
+   
+      #hobbies h3 {
+       transform: rotate(4.2deg);
+       font-size: 3em;
+       text-shadow: -1px 1px 0px #375e97;
+      }
+      
+         .pictures {
+          display: flex;
+          justify-content: center;
+         }
+         
+    .flip-box-back {
+        margin: 0 auto;
+        writing-mode: vertical-lr;
+        text-orientation: upright;
+        width: 100%;
+    }
 
    .flip-box-back p {
     text-transform: uppercase;
     padding: 10px;
     font-size-adjust: auto;
+   }
+
+   .flip-box-back{
+    color: white;
+    transform: rotateY(180deg);
+   }
+   .flip-box-back, .flip-box-front {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden ;
+   }
+
+   .flip-box {
+    overflow: hidden;
+    background-color: transparent;
+    width: 100%;
+    max-width: 300px;
+    height: 300px;
+    perspective: 1000px;
+   }
+
+   .flip-box-inner {
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+    height: 300px;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+   }
+
+   .flip-box:hover .flip-box-inner {
+    transform: rotateY(180deg);
+   }
+
+
+   /* *************************** FOOTER ****************** */
+
+   footer {
+    background: url(./media/footer.jpg) 50% 0% no-repeat fixed;
+    background-size: cover;
+    text-align: center;
+    padding: 160px 50px 5px 50px;
+   }
+   footer h3 {
+    padding:  0 0 60px 0;
+    font-size: 2.5em;
+
+   }
+   .footer-icons {
+    margin:  0 auto;
+    display: flex;
+    justify-content: space-between;
+    max-width: 60%;
+   }
+   .network {
+    font-size: 4em;
+    border: 1px solid #b3aca7;
+    padding: 30px 45px;
+    color: #726659;
+    z-index: -1 !important;
+    border-radius: 50%;
+   }
+   .network:hover {
+    background: #b3aca7;
+    color: #e2dedb;
+    transition: all 0.3s ease-in-out;
    }
