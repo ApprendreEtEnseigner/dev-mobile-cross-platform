@@ -518,3 +518,39 @@ header .button:hover a{
     color: #e2dedb;
     transition: all 0.3s ease-in-out;
    }
+
+   .arrow {
+    width: 50px;
+    margin: -10px auto;
+    padding-top: 29px;
+    animation: arrow linear 1.5s ;
+    animation-iteration-count: infinite;
+   }
+
+   @keyframes arrow {
+    0% {
+        transform: translateY(0px);
+    }
+    38% {
+        transform: translateY(8px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+   }
+
+   .arrow a {
+    font-size: 3em;
+    border: none;
+    color:#726659;
+   }
+
+   .arrow:hover i {
+    transform: scale(1.6);
+    transition: 0.5 ease-in-out;
+   }
+
+   footer p {
+    font-size: 0.9em;
+    letter-spacing: 0.3em;
+   }

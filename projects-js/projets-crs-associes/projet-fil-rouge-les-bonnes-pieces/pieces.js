@@ -121,6 +121,7 @@ buttonDescribe.addEventListener("click", function (){
 
     })
 
+
 const buttonDecroissant = document.querySelector('.btn-decroissant');
 buttonDecroissant.addEventListener("click", function (){
     const piecesOrdonnees = Array.from(pieces);
@@ -128,4 +129,23 @@ buttonDecroissant.addEventListener("click", function (){
         return b.prix - a.prix;
     })
         console.log(piecesOrdonnees);
-    })
+    });
+
+    const noms = pieces.map( piece => piece.nom);
+    for ( let i = pieces.length -1 ; i >= 0 ; i--){
+        if ( pieces[i].prix > 35 ){
+            noms.splice(i, 1);
+        }
+    }
+    console.log(noms);
+    
+     //Création de la liste
+     const abordableElement = document.createElement('ul');
+    
+     for ( let i = 0; i < noms.length ; i++){
+         const nomElement = document.createElement('li');
+         nomElement.innerText = noms[i];
+         abordableElement.appendChild(nomElement);
+     }
+    
+     document.querySelector('.abordables').appendChild(abordableElement);
