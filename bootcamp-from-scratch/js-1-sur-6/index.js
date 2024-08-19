@@ -40,28 +40,26 @@ let y = 3;
 
 // if (x) {
 //     console.log("x exist");
-    
+
 // }
 
-// === egalite en type et valeur 
-// == egalite en valeur uniquement 
-// || ou 
-// && et 
-
+// === egalite en type et valeur
+// == egalite en valeur uniquement
+// || ou
+// && et
 
 //* ------------- les fonctions -----------------------
-//A Fonction classique 
+//A Fonction classique
 // 1. definition
-function faireQulequeChose(){
-    console.log("fais !");
-};
+function faireQulequeChose() {
+  console.log("fais !");
+}
 // 2. appel
 faireQulequeChose();
 
-//B Fonction flechee 
+//B Fonction flechee
 const addition = (a, b) => {
-    console.log(a+b);
-    
+  console.log(a + b);
 };
 addition(2, 5);
 //* ------------- la portee variables -----------------------

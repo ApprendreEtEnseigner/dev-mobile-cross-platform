@@ -1,0 +1,91 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+@font-face {
+  font-family: "poppins";
+  src: url(./assets/fonts/Poppins-ExtraBold.ttf);
+}
+
+body {
+  color: black;
+  text-shadow: 0 0 0 black;
+  font-family: roboto, serif;
+  background: url(./assets/img/ybsow.png) center/cover;
+  min-height: 100vh;
+}
+
+h1 {
+  font-family: "poppins", serif;
+}
+
+main {
+  min-height: 500px;
+  width: 90%;
+  background: white;
+  margin: 0 auto;
+  padding: 15px;
+}
+
+/*! ------------------------- FLEXBOX ---------------------------------------  */
+.flexbox ul {
+  padding: 0;
+  display: flex;
+  border: 1px solid red;
+  justify-content: space-between;
+}
+.flexbox li {
+  list-style: none;
+  height: 160px;
+  width: 160px;
+  margin: 10px;
+  background: turquoise;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*! ------------------------- GRID ---------------------------------------  */
+.grid-container {
+  display: grid;
+  grid-template-columns: 30% 70%;
+}
+.grid img {
+  width: 80%;
+}
+
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas:
+    "i1 i2"
+    "ta ta"
+    "vi bt";
+}
+
+input,
+textarea {
+  margin: 5px;
+  border: 1px solid darkblue;
+  padding: 10px;
+  font-size: 1.1rem;
+}
+
+textarea {
+  grid-area: ta;
+  height: 40px;
+  resize: none;
+}
+
+#btn-submit {
+  grid-area: bt;
+  cursor: pointer;
+  background: cyan;
+  transition: 0.2s ease;
+}
+
+#btn-submit:hover {
+  background: darkblue;
+  color: white;
+}
+
+/*! ------------------------- ABSOLUTE ---------------------------------------  */
