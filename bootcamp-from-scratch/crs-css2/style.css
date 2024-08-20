@@ -1,0 +1,40 @@
+:root {
+  --color1: #ede4d0;
+  --color2: pink;
+  --color3: #393b4b;
+  --color4: rgb(18, 19, 19);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  background: url(./assets/img/bg.jpg) center/cover;
+  height: 100vh;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--color1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  background: rgba(19, 15, 15, 0.514);
+  width: calc(100% - 50px);
+  padding: 20px 20px 6px;
+  box-shadow: 0px 2px 5px rgb(0, 0, 0, 0.521);
+  backdrop-filter: blur(5px);
+}
+.card::before {
+  content: "\2730";
+  position: absolute;
+  top: 14px;
+  right: 20px;
+  font-size: 2.5rem;
+}
+
+h1 {
+  margin-bottom: 24px;
+}
