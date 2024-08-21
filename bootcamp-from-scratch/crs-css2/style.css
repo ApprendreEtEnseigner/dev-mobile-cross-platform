@@ -38,3 +38,124 @@ body {
 h1 {
   margin-bottom: 24px;
 }
+.grid-container {
+  display: grid;
+  grid-template-columns: 20% 80%;
+}
+.polygone-container {
+  filter: drop-shadow(-1px 6px 3px var(--color2));
+  place-self: center left;
+}
+.polygone {
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  background: linear-gradient(135deg, var(--color1) 0%, var(--color2));
+  height: 100px;
+  width: 100px;
+}
+.polygone::after {
+  content: "Un texte";
+  position: absolute;
+  color: var(--color2);
+  background: var(--color4);
+  top: 50px;
+  left: 50px;
+  transform: translate(-50%, -50%) rotate(344deg);
+  width: 90px;
+  padding: 4px;
+  text-align: center;
+}
+p {
+  line-height: 26px;
+  margin: 20px 0;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  overflow: hidden;
+  text-align: justify;
+}
+p::selection {
+  background: var(--color1);
+  color: var(--color4);
+}
+.checkbox-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0 30px;
+}
+input[type="checkbox"] {
+  display: none;
+}
+input[type="checkbox"]:checked + label {
+  background: var(--color2);
+  color: var(--color3);
+  transform: scale(1.1);
+  filter: brightness(120%);
+}
+label {
+  cursor: pointer;
+  border: 1px solid var(--color1);
+  background: var(--color3);
+  padding: 10px;
+  border-radius: 5px;
+  transition: 0.2s;
+  user-select: none;
+}
+.e-mail {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.e-mail input {
+  padding: 10px;
+  border-radius: 5px;
+  outline: none;
+  border: 2px solid transparent;
+  transition: 0.3s;
+  text-align: center;
+  font-size: 1.1rem;
+  color: var(--color1);
+  min-width: 180px;
+  width: 35%;
+  max-width: 300px;
+}
+input[type="text"]:focus {
+  background: transparent;
+  border: 2px solid var(--color2);
+  border-radius: 150px;
+}
+input[type="text"]::placeholder {
+  color: var(--color2);
+  font-size: 18px;
+}
+button {
+  cursor: pointer;
+  background: var(--color2);
+  bottom: none;
+  font-size: 1.3rem;
+  padding: 10px 20px;
+  border-radius: 150px;
+  margin: 0 auto;
+  display: block;
+  transition: 0.1s;
+}
+button:active {
+  transform: scale(1.2);
+}
+button:hover {
+  letter-spacing: 3px;
+}
+button:hover + a,
+a:hover {
+  opacity: 1;
+  transform: translateY(0);
+}
+a {
+  color: var(--color4);
+  text-align: center;
+  display: block;
+  opacity: 0.4;
+  transform: translateY(20px);
+  transition: 0.3s;
+}
+a:visited {
+  color: var(--color3);
+}

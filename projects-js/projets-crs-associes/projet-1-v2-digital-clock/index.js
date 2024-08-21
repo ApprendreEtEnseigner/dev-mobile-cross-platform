@@ -4,15 +4,16 @@ const minutesEl = document.getElementById("minutes");
 const secondesEl = document.getElementById("secondes");
 const ampmEl = document.getElementById("ampm");
 
-//! getData... pour recuperer les donnees de l'ordinateur
+//! getData pour... recuperer les donnees de l'ordinateur
 const getData = () => {
-  let h = new Date().getHours();
-  let m = new Date().getMinutes();
-  let s = new Date().getSeconds();
+  const now = new Date();
+  let h = now.getHours();
+  let m = now.getMinutes();
+  let s = now.getSeconds();
   let ampm = "AM";
 
   //* Le ampmEl ne peut pas etre obtenu a partir de l'ordi, donc on va user la logique
-  if (h > 12) {
+  if (h >= 12) {
     h = h - 12;
     ampm = "PM";
   }
@@ -20,25 +21,24 @@ const getData = () => {
   return { h, m, s, ampm };
 };
 
-//! formatTime pour... gerer l'affichage de 0 ou non au niveau de l'heure
+//! formatTime pour... gerer l'affichage de 0 ou non au niveau de l'heure, minute, seconde
 const formatTime = ({ h, m, s, ampm }) => {
   h = h < 10 ? "0" + h : h;
   m = m < 10 ? "0" + m : m;
   s = s < 10 ? "0" + s : s;
 
-  return { h, m, s };
+  return { h, m, s, ampm };
 };
-formatTime(getData());
 
-//! Pour remplacer le contenu des elements <strong></strong>, via l'attribut/propriete innerText...
+//! displayTime Pour... remplacer le contenu des elements <strong></strong>, via l'attribut/propriete textContent
 const displayTime = ({ h, m, s, ampm }) => {
-  hourEl.innerText = h;
-  minutesEl.innerText = m;
-  secondesEl.innerText = s;
-  ampmEl.innerText = ampm;
-  setTimeout(() => {
-    displayTime(getData());
-  }, 1000);
+  hourEl.textContent = h;
+  minutesEl.textContent = m;
+  secondesEl.textContent = s;
+  ampmEl.textContent = ampm;
 };
 
-displayTime(getData());
+//! setInterval Pour... metre a jour periodiquement, displayTime sans avoir besoin de rappeler manuellement displayTime.
+setInterval(() => {
+  displayTime(formatTime(getData()));
+}, 1000);
